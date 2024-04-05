@@ -1,0 +1,22 @@
+.contactList {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.contactListItem {
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 320px;
+}
+
+@media screen and (min-width: 768px) {
+  .contactListItem {
+    max-width: 288px;
+  }
+}

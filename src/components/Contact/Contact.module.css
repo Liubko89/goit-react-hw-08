@@ -1,0 +1,28 @@
+.contactInfo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.contactInfo:first-child {
+  margin-bottom: 12px;
+}
+
+.deleteBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.deleteBtn:hover {
+  background-color: gray;
+}
+
+.contactIcon {
+  width: 24px;
+  height: 24px;
+}

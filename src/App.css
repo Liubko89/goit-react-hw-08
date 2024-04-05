@@ -1,0 +1,17 @@
+.container {
+  padding: 20px;
+  max-width: 1280px;
+  width: 100%;
+}
+
+.container h1 {
+  margin-bottom: 16px;
+}
+
+input {
+  background-color: rgb(215, 247, 250);
+}
+
+input::placeholder {
+  color: rgba(199, 189, 189, 0.8);
+}
