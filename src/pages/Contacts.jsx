@@ -7,7 +7,7 @@ import { fetchContacts } from "../redux/contacts/operations";
 import SearchBox from "../components/SearchBox/SearchBox";
 import { selectError, selectIsLoading } from "../redux/contacts/selectors";
 
-export default function Tasks() {
+export default function Contacts() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
