@@ -6,6 +6,7 @@ import ContactForm from "../components/ContactForm/ContactForm";
 import { fetchContacts } from "../redux/contacts/operations";
 import SearchBox from "../components/SearchBox/SearchBox";
 import { selectError, selectIsLoading } from "../redux/contacts/selectors";
+import Loader from "../components/Loader/Loader";
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export default function Contacts() {
       <DocumentTitle>Phonebook</DocumentTitle>
       <ContactForm />
       <SearchBox />
-      {isLoading && !error && <b>Request in progress...</b>}
+      {isLoading && !error && <Loader />}
       {error && (
         <b>
           There is a problem with the connection to the server, please try again

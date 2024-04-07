@@ -30,6 +30,8 @@ export const RegistrationForm = () => {
       password: password,
     };
 
+    console.log(credentials);
+
     dispatch(register(credentials));
 
     form.reset();
