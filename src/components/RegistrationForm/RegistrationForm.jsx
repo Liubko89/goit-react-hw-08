@@ -1,21 +1,36 @@
 import { useDispatch } from "react-redux";
 import css from "./RegistrationForm.module.css";
 import { register } from "../../redux/auth/operations";
+import { useState } from "react";
 
 export const RegistrationForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const dispatch = useDispatch();
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
 
-    dispatch(
-      register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
+    const credentials = {
+      name: name,
+      email: email,
+      password: password,
+    };
+
+    dispatch(register(credentials));
 
     form.reset();
   };
@@ -24,15 +39,32 @@ export const RegistrationForm = () => {
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
       <label className={css.label}>
         Username
-        <input type="text" name="name" />
+        <input
+          autoComplete="off"
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleNameChange}
+        />
       </label>
       <label className={css.label}>
         Email
-        <input type="email" name="email" />
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleEmailChange}
+        />
       </label>
       <label className={css.label}>
         Password
-        <input type="password" name="password" />
+        <input
+          autoComplete="off"
+          type="password"
+          name="password"
+          value={password}
+          onChange={handlePasswordChange}
+        />
       </label>
       <button type="submit">Register</button>
     </form>
