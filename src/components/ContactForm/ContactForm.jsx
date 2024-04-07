@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 
-const ContactsSchema = Yup.object().shape({
+const contactsSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Contact name must be at least 3 characters!")
     .max(50, "Contact name must be less than 50 characters!")
@@ -33,7 +33,7 @@ const ContactForm = () => {
 
   return (
     <Formik
-      validationSchema={ContactsSchema}
+      validationSchema={contactsSchema}
       initialValues={INITIAL_FORM_DATA}
       onSubmit={handleSubmit}
     >

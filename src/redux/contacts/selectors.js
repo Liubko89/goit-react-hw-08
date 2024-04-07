@@ -11,8 +11,10 @@ const filteredContacts = createSelector(
   [selectContacts, selectNameFilter],
   (contacts, filter) => {
     return filter
-      ? contacts.filter((contact) =>
-          contact.name.toLowerCase().includes(filter.toLowerCase())
+      ? contacts.filter(
+          (contact) =>
+            contact.name.toLowerCase().includes(filter.toLowerCase()) ||
+            contact.number.includes(filter)
         )
       : contacts;
   }
