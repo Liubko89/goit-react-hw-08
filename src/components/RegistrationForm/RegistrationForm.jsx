@@ -30,6 +30,7 @@ const INITIAL_FORM_DATA = {
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
+
   const handleSubmit = (data, actions) => {
     dispatch(register(data));
     actions.resetForm();
