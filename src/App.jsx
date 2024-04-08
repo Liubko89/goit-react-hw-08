@@ -9,6 +9,7 @@ import { refreshUser } from "./redux/auth/operations";
 import { useSelector } from "react-redux";
 import { selectIsRefreshing } from "./redux/auth/selectors";
 import Loader from "./components/Loader/Loader";
+import "./App.css";
 
 const HomePage = lazy(() => import("./pages/Home"));
 const RegisterPage = lazy(() => import("./pages/Registration"));

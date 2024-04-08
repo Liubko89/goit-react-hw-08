@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 import { contactsSchema } from "../../services/yupSchemas";
 import { selectFilteredContacts } from "../../redux/contacts/selectors";
+import toast, { Toaster } from "react-hot-toast";
+import { styleToastMessage, successToast } from "../../services/toastStyles";
 
 const INITIAL_FORM_DATA = {
   name: "",
@@ -19,15 +21,24 @@ const ContactForm = () => {
         (el) => el.name.trim().toLowerCase() === data.name.trim().toLowerCase()
       )
     ) {
-      console.log(`You already have a contact with name ${data.name}`);
+      toast(`You already have a contact with name ${data.name}`, {
+        duration: 3000,
+        style: styleToastMessage,
+      });
       return;
     } else if (
       visibleContacts.some((el) => el.number.trim() === data.number.trim())
     ) {
-      console.log(`You already have a contact with number ${data.number}`);
+      toast(`You already have a contact with number ${data.number}`, {
+        duration: 3000,
+        style: styleToastMessage,
+      });
       return;
     } else {
       dispatch(addContact(data));
+      toast.success("Contact successfully added!", {
+        style: successToast,
+      });
     }
     actions.resetForm();
   };
@@ -66,6 +77,7 @@ const ContactForm = () => {
         <button className={css.formBtn} type="submit">
           Add contact
         </button>
+        <Toaster position="top-center" reverseOrder={false} />
       </Form>
     </Formik>
   );

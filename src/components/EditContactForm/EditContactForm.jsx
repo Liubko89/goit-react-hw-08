@@ -9,9 +9,8 @@ import { selectFilteredContacts } from "../../redux/contacts/selectors";
 const EditContactForm = ({ contactId, handleCloseModal }) => {
   const visibleContacts = useSelector(selectFilteredContacts);
   const { name, number } = visibleContacts.find((el) => el.id === contactId);
-  console.log(name, number);
-
   const dispatch = useDispatch();
+
   const handleSubmit = (data, actions) => {
     const contactData = { ...data, id: contactId };
     dispatch(editContact(contactData));

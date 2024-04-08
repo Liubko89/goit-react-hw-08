@@ -3,6 +3,8 @@ import css from "./LoginForm.module.css";
 import { logIn } from "../../redux/auth/operations";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { loginSchema } from "../../services/yupSchemas";
+import toast from "react-hot-toast";
+import { successToast } from "../../services/toastStyles";
 
 const INITIAL_FORM_DATA = {
   email: "",
@@ -16,10 +18,12 @@ export const LoginForm = () => {
     dispatch(logIn(data))
       .unwrap()
       .then(() => {
-        console.log("login success");
+        toast.success("Loged in successfully!", {
+          style: successToast,
+        });
       })
       .catch(() => {
-        console.log("login error");
+        toast.error("This didn't work. Try again");
       });
 
     actions.resetForm();

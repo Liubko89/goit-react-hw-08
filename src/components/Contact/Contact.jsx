@@ -6,6 +6,8 @@ import { deleteContact } from "../../redux/contacts/operations";
 import { useState } from "react";
 import ModalContact from "../ModalContact/ModalContact";
 import EditContactForm from "../EditContactForm/EditContactForm";
+import toast from "react-hot-toast";
+import { successToast } from "../../services/toastStyles";
 
 const Contact = ({ contactName, contactNumber, contactId }) => {
   const dispatch = useDispatch();
@@ -29,6 +31,9 @@ const Contact = ({ contactName, contactNumber, contactId }) => {
 
   const handleDelete = () => {
     dispatch(deleteContact(contactId));
+    toast.success("Contact successfully deleted", {
+      style: successToast,
+    });
     setShowModal(false);
   };
 
