@@ -1,23 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import css from "./ContactForm.module.css";
-import * as Yup from "yup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
-
-const contactsSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, "Contact name must be at least 3 characters!")
-    .max(50, "Contact name must be less than 50 characters!")
-    .required("Contact name is required!"),
-  number: Yup.string()
-    .min(3, "Contact number must be at least 3 characters!")
-    .max(50, "Contact number must be less than 50 characters!")
-    .matches(
-      /^[0-9-]+$/,
-      "You are allowed to type only numbers and symbol - between numbers"
-    )
-    .required("Contact number is required!"),
-});
+import { contactsSchema } from "../../services/yupSchemas";
+import { selectFilteredContacts } from "../../redux/contacts/selectors";
 
 const INITIAL_FORM_DATA = {
   name: "",
@@ -25,9 +11,24 @@ const INITIAL_FORM_DATA = {
 };
 
 const ContactForm = () => {
+  const visibleContacts = useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
   const handleSubmit = (data, actions) => {
-    dispatch(addContact(data));
+    if (
+      visibleContacts.some(
+        (el) => el.name.trim().toLowerCase() === data.name.trim().toLowerCase()
+      )
+    ) {
+      console.log(`You already have a contact with name ${data.name}`);
+      return;
+    } else if (
+      visibleContacts.some((el) => el.number.trim() === data.number.trim())
+    ) {
+      console.log(`You already have a contact with number ${data.number}`);
+      return;
+    } else {
+      dispatch(addContact(data));
+    }
     actions.resetForm();
   };
 

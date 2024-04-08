@@ -1,22 +1,8 @@
-import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import css from "./LoginForm.module.css";
 import { logIn } from "../../redux/auth/operations";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-
-const loginSchema = Yup.object().shape({
-  email: Yup.string()
-    .email("Invalid email format")
-    .required("Email is required"),
-  password: Yup.string()
-    .min(7, "password must be at least 7 characters!")
-    .max(50, "password must be less than 50 characters!")
-    .required("password is required!")
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+$/,
-      "Password must include a lowercase letter, an uppercase letter, and a number"
-    ),
-});
+import { loginSchema } from "../../services/yupSchemas";
 
 const INITIAL_FORM_DATA = {
   email: "",

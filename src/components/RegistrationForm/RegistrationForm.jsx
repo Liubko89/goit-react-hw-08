@@ -1,26 +1,8 @@
-import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import css from "./RegistrationForm.module.css";
 import { register } from "../../redux/auth/operations";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-
-const registerSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, "Register name must be at least 3 characters!")
-    .max(50, "Register name must be less than 50 characters!")
-    .required("Register name is required!"),
-  email: Yup.string()
-    .email("Invalid email format")
-    .required("Email is required"),
-  password: Yup.string()
-    .min(7, "password must be at least 7 characters!")
-    .max(50, "password must be less than 50 characters!")
-    .required("password is required!")
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+$/,
-      "Password must include a lowercase letter, an uppercase letter, and a number"
-    ),
-});
+import { registerSchema } from "../../services/yupSchemas";
 
 const INITIAL_FORM_DATA = {
   name: "",
