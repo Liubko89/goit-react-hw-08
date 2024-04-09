@@ -4,9 +4,9 @@
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 4px;
 }
 .contactListItem {
-  border: 1px solid black;
   border-radius: 4px;
   width: 100%;
   padding: 8px;
@@ -14,10 +14,6 @@
   align-items: center;
   justify-content: space-between;
   max-width: 320px;
-}
-
-@media screen and (min-width: 768px) {
-  .contactListItem {
-    max-width: 288px;
-  }
+  gap: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
 }

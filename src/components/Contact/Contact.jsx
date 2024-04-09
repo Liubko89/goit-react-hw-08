@@ -39,31 +39,47 @@ const Contact = ({ contactName, contactNumber, contactId }) => {
 
   return (
     <>
-      <div className={css.contactWrapper}>
-        <div className={css.contactInfo}>
-          <p>{contactName}</p>
-        </div>
-        <div className={css.contactInfo}>
-          <a href={`tel:${contactNumber.replaceAll("-", "")}`}>
-            <FaPhone /> {contactNumber}
-          </a>
-        </div>
-      </div>
       <div>
-        <button className={css.deleteBtn} onClick={handleShowDeleteModal}>
-          Delete
-        </button>
-        <button className={css.deleteBtn} onClick={handleShowEditModal}>
+        <div className={css.contactInfo}>
           <IoIosContact className={css.contactIcon} />
-          Edit
+          <p className={css.contactName}>{contactName}</p>
+        </div>
+
+        <a
+          className={`${css.contactInfo} ${css.contactNumber}`}
+          href={`tel:${contactNumber.replaceAll("-", "")}`}
+        >
+          <FaPhone className={css.faPhone} /> {contactNumber}
+        </a>
+      </div>
+      <div className={css.btnWrapper}>
+        <button
+          className={`${css.deleteBtn} button-64`}
+          onClick={handleShowDeleteModal}
+        >
+          <span>Delete</span>
+        </button>
+        <button className="button-64" onClick={handleShowEditModal}>
+          <span>Edit</span>
         </button>
       </div>
       <ModalContact modalIsOpen={showModal} closeModal={handleCloseModal}>
         {showDelete && (
-          <div>
-            <b>Do you really want to delete this contact?</b>
-            <button onClick={handleDelete}>Delete</button>
-            <button onClick={handleCloseModal}>Cancel</button>
+          <div className={css.deleteModal}>
+            <b className={css.deleteModalText}>
+              Do you really want to delete this contact?
+            </b>
+            <div className={css.btnWrapper}>
+              <button
+                className={`${css.deleteBtn} button-64`}
+                onClick={handleDelete}
+              >
+                <span>Delete</span>
+              </button>
+              <button className="button-64" onClick={handleCloseModal}>
+                <span>Cancel</span>
+              </button>
+            </div>
           </div>
         )}
         {showEdit && (

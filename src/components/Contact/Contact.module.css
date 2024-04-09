@@ -1,28 +1,68 @@
+.contactInfo:first-child {
+  margin-bottom: 8px;
+}
+
 .contactInfo {
   display: flex;
+  align-items: center;
   gap: 8px;
-  align-items: center;
+  max-width: 196px;
+  text-decoration: none;
+  color: var(--text-light);
+  padding: 4px;
+  font-size: 16px;
 }
 
-.contactInfo:first-child {
-  margin-bottom: 12px;
+.contactNumber {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  transition: scale 300ms ease-in-out;
 }
 
-.deleteBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 8px;
-  cursor: pointer;
-  border: 1px solid gray;
-  border-radius: 4px;
+.contactNumber:hover {
+  scale: 1.03;
 }
 
-.deleteBtn:hover {
-  background-color: gray;
+.contactName {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .contactIcon {
+  fill: var(--decor);
+  display: inline-block;
   width: 24px;
   height: 24px;
+  margin: 0;
+}
+
+.faPhone {
+  fill: var(--decor);
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--decor);
+  border-radius: 100%;
+  padding: 2px;
+  margin: 0 0 0 2px;
+}
+
+.btnWrapper {
+  border-left: 1px solid var(--decor);
+  padding-left: 4px;
+}
+
+.deleteBtn {
+  margin-bottom: 8px;
+}
+
+.deleteModal {
+  display: flex;
+  gap: 8px;
+}
+
+.deleteModalText {
+  align-self: center;
+  color: var(--text-dark);
+  text-align: center;
 }
