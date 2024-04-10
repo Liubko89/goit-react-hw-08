@@ -12,6 +12,7 @@
 
 #root {
   background-color: #babac2;
+  min-height: 100vh;
 }
 
 .homePage {
