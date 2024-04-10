@@ -5,7 +5,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { registerSchema } from "../../services/yupSchemas";
 
 const INITIAL_FORM_DATA = {
-  name: "",
+  name: " ",
   email: "",
   password: "",
 };
@@ -25,41 +25,44 @@ export const RegistrationForm = () => {
       onSubmit={handleSubmit}
     >
       <Form className={css.form}>
-        <label className={css.label}>
-          <span>Username</span>
+        <label>
+          <span className={css.label}>Username</span>
           <Field
-            className={css.formInput}
+            className="input"
             type="text"
             name="name"
             placeholder="Enter your name"
+            autoComplete="off"
           />
           <ErrorMessage className="errorMsg" name="name" component="span" />
         </label>
 
-        <label className={css.label}>
-          <span>Email</span>
+        <label>
+          <span className={css.label}>Email</span>
           <Field
-            className={css.formInput}
+            className="input"
             type="email"
             name="email"
             placeholder="Enter your email"
+            autoComplete="off"
           />
           <ErrorMessage className="errorMsg" name="email" component="span" />
         </label>
 
-        <label className={css.label}>
-          <span>Password</span>
+        <label>
+          <span className={css.label}>Password</span>
           <Field
-            className={css.formInput}
+            className="input"
             type="password"
             name="password"
             placeholder="Enter password"
+            autoComplete="off"
           />
           <ErrorMessage className="errorMsg" name="password" component="span" />
         </label>
 
-        <button className={css.formBtn} type="submit">
-          Register
+        <button className="button-64" type="submit">
+          <span>Register</span>
         </button>
       </Form>
     </Formik>

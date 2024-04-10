@@ -36,36 +36,30 @@ export const LoginForm = () => {
       onSubmit={handleSubmit}
     >
       <Form className={css.form}>
-        <label className={css.label}>
-          <span>Email</span>
+        <label>
+          <span className={css.label}>Email</span>
           <Field
-            className={css.formInput}
+            className="input"
             type="email"
             name="email"
             placeholder="Enter your email"
+            autoComplete="off"
           />
-          <ErrorMessage
-            className="errorMsg"
-            name="email"
-            component="span"
-          />
+          <ErrorMessage className="errorMsg" name="email" component="span" />
         </label>
-        <label className={css.label}>
-          <span>Password</span>
+        <label>
+          <span className={css.label}>Password</span>
           <Field
-            className={css.formInput}
+            className="input"
             type="password"
             name="password"
             placeholder="Enter password"
+            autoComplete="off"
           />
-          <ErrorMessage
-            className="errorMsg"
-            name="password"
-            component="span"
-          />
+          <ErrorMessage className="errorMsg" name="password" component="span" />
         </label>
-        <button className={css.formBtn} type="submit">
-          Log In
+        <button className="button-64" type="submit">
+          <span>Log In</span>
         </button>
       </Form>
     </Formik>

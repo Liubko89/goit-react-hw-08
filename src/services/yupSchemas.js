@@ -7,7 +7,7 @@ export const contactsSchema = Yup.object().shape({
     .required("Contact name is required!"),
   number: Yup.string()
     .min(3, "Contact number must be at least 3 characters!")
-    .max(50, "Contact number must be less than 50 characters!")
+    .max(15, "Contact number must be less than 15 characters!")
     .matches(
       /^[0-9-]+$/,
       "You are allowed to type only numbers and symbol - between numbers"

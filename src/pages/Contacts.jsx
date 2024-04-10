@@ -18,12 +18,12 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <div className="container mainContactForm">
+    <div className="container">
       <DocumentTitle>Phonebook</DocumentTitle>
-
-      <ContactForm />
-      <SearchBox />
-
+      <div className="mainContactForm">
+        <ContactForm />
+        <SearchBox />
+      </div>
       {isLoading && !error && <Loader />}
       {error && (
         <b>
