@@ -9,10 +9,14 @@ export const UserMenu = () => {
   const user = useSelector(selectUser);
 
   return (
-    <div className={css.wrapper}>
-      <p className={css.username}>Welcome, {user.name}</p>
-      <button type="button" onClick={() => dispatch(logOut())}>
-        Logout
+    <div className="container">
+      <p className={css.greeting}>Welcome, {user.name}</p>
+      <button
+        className={`${css.btn} button-64`}
+        type="button"
+        onClick={() => dispatch(logOut())}
+      >
+        <span>Logout</span>
       </button>
     </div>
   );

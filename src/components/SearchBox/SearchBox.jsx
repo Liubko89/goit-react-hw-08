@@ -12,10 +12,10 @@ const SearchBox = () => {
   return (
     <label className={css.SearchBox}>
       <span>
-        <b> Find contacts by name</b>
+        <b className={css.label}> Find contacts by name or number</b>
       </span>
       <input
-        className={css.searchBoxInput}
+        className={`${css.input} input`}
         type="text"
         placeholder="Search for..."
         value={filter}

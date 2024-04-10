@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.label,
+.input {
+  display: block;
+  color: var(--text-dark);
+}
+
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-left: 1px solid var(--decor);
+  border-bottom: 1px solid var(--decor);
+  padding-left: 4px;
+  padding-bottom: 4px;
+}

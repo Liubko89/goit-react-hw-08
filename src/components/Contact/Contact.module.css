@@ -14,7 +14,7 @@
 }
 
 .contactNumber {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--bg);
   border-radius: 2px;
   transition: scale 300ms ease-in-out;
 }
@@ -56,6 +56,19 @@
   margin-bottom: 8px;
 }
 
+.editBtn span,
+.deleteBtn span {
+  background-color: var(--text-light);
+  color: var(--text-dark);
+}
+
+.editBtn span:hover,
+.deleteBtn span:hover,
+.editBtn span:focus,
+.deleteBtn span:focus {
+  color: var(--text-light);
+}
+
 .deleteModal {
   display: flex;
   gap: 8px;
@@ -65,4 +78,8 @@
   align-self: center;
   color: var(--text-dark);
   text-align: center;
+}
+
+.deleteBtnModal {
+  margin-bottom: 8px;
 }

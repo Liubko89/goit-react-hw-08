@@ -1,20 +1,10 @@
-.SearchBox {
-  display: flex;
-  flex-direction: column;
-  max-width: 320px;
-  width: 100%;
-  gap: 4px;
-  margin-bottom: 12px;
+.label {
+  color: var(--text-dark);
 }
 
-.searchBoxInput {
-  border-radius: 4px;
-  border: 1px solid black;
-  outline: none;
-  padding: 8px;
-}
-
-.searchBoxInput:active,
-.searchBoxInput:focus {
-  border: 1px solid blue;
+.label,
+.input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -59,7 +59,10 @@ const Contact = ({ contactName, contactNumber, contactId }) => {
         >
           <span>Delete</span>
         </button>
-        <button className="button-64" onClick={handleShowEditModal}>
+        <button
+          className={`${css.editBtn} button-64`}
+          onClick={handleShowEditModal}
+        >
           <span>Edit</span>
         </button>
       </div>
@@ -71,7 +74,7 @@ const Contact = ({ contactName, contactNumber, contactId }) => {
             </b>
             <div className={css.btnWrapper}>
               <button
-                className={`${css.deleteBtn} button-64`}
+                className={`${css.deleteBtnModal} button-64`}
                 onClick={handleDelete}
               >
                 <span>Delete</span>

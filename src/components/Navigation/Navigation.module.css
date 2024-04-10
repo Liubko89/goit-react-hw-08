@@ -1,0 +1,23 @@
+.nav {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--bg);
+  border-radius: 2px;
+}
+
+.link {
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 2px;
+  margin: 0 auto;
+}
+
+.active {
+  color: var(--primary-brand);
+  font-weight: bold;
+  border-left: 1px solid var(--decor);
+  border-bottom: 1px solid var(--decor);
+}

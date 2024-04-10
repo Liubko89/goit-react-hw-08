@@ -33,7 +33,7 @@ export const RegistrationForm = () => {
             name="name"
             placeholder="Enter your name"
           />
-          <ErrorMessage className={css.errorMsg} name="name" component="span" />
+          <ErrorMessage className="errorMsg" name="name" component="span" />
         </label>
 
         <label className={css.label}>
@@ -44,11 +44,7 @@ export const RegistrationForm = () => {
             name="email"
             placeholder="Enter your email"
           />
-          <ErrorMessage
-            className={css.errorMsg}
-            name="email"
-            component="span"
-          />
+          <ErrorMessage className="errorMsg" name="email" component="span" />
         </label>
 
         <label className={css.label}>
@@ -59,11 +55,7 @@ export const RegistrationForm = () => {
             name="password"
             placeholder="Enter password"
           />
-          <ErrorMessage
-            className={css.errorMsg}
-            name="password"
-            component="span"
-          />
+          <ErrorMessage className="errorMsg" name="password" component="span" />
         </label>
 
         <button className={css.formBtn} type="submit">

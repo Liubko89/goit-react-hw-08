@@ -29,32 +29,42 @@ const EditContactForm = ({ contactId, handleCloseModal }) => {
         onSubmit={handleSubmit}
       >
         <Form className={css.form}>
-          <label className={css.formLabel}>
-            <span>Name</span>
-            <Field className={css.formInput} type="text" name="name" />
-            <ErrorMessage
-              className={css.errorMsg}
-              name="name"
-              component="span"
-            />
-          </label>
-          <label className={css.formLabel}>
-            <span>Number</span>
-            <Field className={css.formInput} type="text" name="number" />
-            <ErrorMessage
-              className={css.errorMsg}
-              name="number"
-              component="span"
-            />
-          </label>
-          <button className={css.formBtn} type="submit">
-            Change contact
-          </button>
+          <div>
+            <label>
+              <span className={css.label}>Name</span>
+              <Field
+                className="input"
+                type="text"
+                name="name"
+                autoComplete="off"
+              />
+              <ErrorMessage className="errorMsg" name="name" component="span" />
+            </label>
+            <label>
+              <span className={css.label}>Number</span>
+              <Field
+                className="input"
+                type="text"
+                name="number"
+                autoComplete="off"
+              />
+              <ErrorMessage
+                className="errorMsg"
+                name="number"
+                component="span"
+              />
+            </label>
+          </div>
+          <div className={css.btnWrapper}>
+            <button className="button-64" type="submit">
+              <span>Ok</span>
+            </button>
+            <button className="button-64" onClick={() => handleCloseModal()}>
+              <span>Cancel</span>
+            </button>
+          </div>
         </Form>
       </Formik>
-      <button className={css.formBtn} onClick={() => handleCloseModal()}>
-        Cancel
-      </button>
     </>
   );
 };

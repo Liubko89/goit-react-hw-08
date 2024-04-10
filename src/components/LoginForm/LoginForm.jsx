@@ -45,7 +45,7 @@ export const LoginForm = () => {
             placeholder="Enter your email"
           />
           <ErrorMessage
-            className={css.errorMsg}
+            className="errorMsg"
             name="email"
             component="span"
           />
@@ -59,7 +59,7 @@ export const LoginForm = () => {
             placeholder="Enter password"
           />
           <ErrorMessage
-            className={css.errorMsg}
+            className="errorMsg"
             name="password"
             component="span"
           />

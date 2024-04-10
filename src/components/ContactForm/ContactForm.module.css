@@ -1,52 +1,21 @@
 .form {
-  border: 1px solid black;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  border: none;
+  border-radius: 2px;
   width: 100%;
   margin-bottom: 16px;
   padding: 8px;
   max-width: 320px;
+  background-color: var(--bg);
 }
 
-.formLabel {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 4px;
-  margin-bottom: 12px;
+.label {
+  margin-bottom: 4px;
+  color: var(--text-light);
+  display: block;
 }
 
-.formInput {
-  border-radius: 4px;
-  border: 1px solid black;
-  outline: none;
-  padding: 8px;
-}
-
-.formInput:active,
-.formInput:focus {
-  border: 1px solid blue;
-}
-
-.formBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 8px;
-  cursor: pointer;
-  border: 1px solid gray;
-  border-radius: 4px;
-  align-self: center;
-}
-
-.formBtn:hover {
-  background-color: gray;
-}
-
-.errorMsg {
-  background-color: rgb(242, 242, 102);
-  border-radius: 4px;
-  padding: 8px;
+.btn {
+  margin: 0 auto;
+  font-size: 24px;
+  text-align: center;
 }

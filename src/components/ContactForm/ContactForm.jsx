@@ -50,32 +50,30 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
     >
       <Form className={css.form}>
-        <label className={css.formLabel}>
-          <span>Name</span>
+        <label>
+          <span className={css.label}>Name</span>
           <Field
-            className={css.formInput}
+            className="input"
             type="text"
             name="name"
             placeholder="Enter contact name"
+            autoComplete="off"
           />
-          <ErrorMessage className={css.errorMsg} name="name" component="span" />
+          <ErrorMessage className="errorMsg" name="name" component="span" />
         </label>
-        <label className={css.formLabel}>
-          <span>Number</span>
+        <label>
+          <span className={css.label}>Phone</span>
           <Field
-            className={css.formInput}
+            className="input"
             type="text"
             name="number"
             placeholder="Enter contact number"
+            autoComplete="off"
           />
-          <ErrorMessage
-            className={css.errorMsg}
-            name="number"
-            component="span"
-          />
+          <ErrorMessage className="errorMsg" name="number" component="span" />
         </label>
-        <button className={css.formBtn} type="submit">
-          Add contact
+        <button className={`${css.btn} button-64`} type="submit">
+          <span>Add contact</span>
         </button>
         <Toaster position="top-center" reverseOrder={false} />
       </Form>

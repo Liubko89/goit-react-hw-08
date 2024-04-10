@@ -1,10 +1,31 @@
 :root {
   --primary-brand: #ccff40;
   --secondary: #16243f;
-  --decor: #00ddeb;
+  --decor: #038b95;
   --success: #31d0aa;
   --text-dark: #434455;
   --text-light: #fff;
+  --error-input: #b9d961;
+  --bg-input: #dbf8f1;
+  --bg: rgba(0, 0, 0, 0.2);
+}
+
+#root {
+  background-color: #babac2;
+}
+
+.homePage {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(43, 43, 48, 0.3)
+    ),
+    url("../src/img/jenny.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-left: 1px solid var(--primary-brand);
+  border-right: 1px solid var(--primary-brand);
+  min-height: 70vh;
 }
 
 .container {
@@ -15,6 +36,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 12px;
 }
 
 @media screen and (min-width: 768px) {
@@ -28,7 +50,6 @@
     max-width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
-    margin: 0 auto;
   }
 }
 
@@ -46,13 +67,13 @@
   box-sizing: border-box;
   color: #ffffff;
   display: flex;
-  font-family: Phantomsans, sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
   justify-content: center;
   line-height: 1em;
   max-width: 100%;
   min-width: 80px;
-  padding: 0;
+  padding: 2px;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
@@ -77,4 +98,42 @@
 
 .button-64:hover span {
   background: none;
+}
+
+.errorMsg {
+  display: block;
+  background-color: var(--error-input);
+  border-radius: 2px;
+  color: var(--text-light);
+  padding: 8px;
+  position: absolute;
+}
+
+.input {
+  margin-bottom: 8px;
+  border: none;
+  background-color: var(--bg-input);
+  border-radius: 2px;
+  outline: none;
+  padding: 4px;
+  font-size: 20px;
+}
+
+.input:active,
+.input:focus {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.input::placeholder {
+  color: var(--bg);
+}
+
+h1 {
+  color: var(--text-dark);
+  text-align: center;
+  border-bottom: 1px solid var(--decor);
+  margin-top: 24px;
+  margin-bottom: 24px;
 }

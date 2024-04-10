@@ -1,0 +1,10 @@
+.greeting {
+  color: var(--text-dark);
+  align-self: flex-end;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.btn {
+  align-self: flex-end;
+}
