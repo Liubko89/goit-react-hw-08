@@ -28,6 +28,7 @@ const App = () => {
     <Loader />
   ) : (
     <>
+      <Toaster position="top-center" reverseOrder={false} />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -57,7 +58,6 @@ const App = () => {
           />
         </Route>
       </Routes>
-      <Toaster />
     </>
   );
 };
