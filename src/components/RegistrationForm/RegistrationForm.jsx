@@ -5,7 +5,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { registerSchema } from "../../services/yupSchemas";
 
 const INITIAL_FORM_DATA = {
-  name: " ",
+  name: "",
   email: "",
   password: "",
 };
