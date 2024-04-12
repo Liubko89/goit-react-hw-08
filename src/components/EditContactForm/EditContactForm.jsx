@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { editContact } from "../../redux/contacts/operations";
 import { contactsSchema } from "../../services/yupSchemas";
 import { selectFilteredContacts } from "../../redux/contacts/selectors";
+import toast from "react-hot-toast";
+import { styleToastMessage } from "../../services/toastStyles";
 
 const EditContactForm = ({ contactId, handleCloseModal }) => {
   const visibleContacts = useSelector(selectFilteredContacts);
@@ -13,6 +15,35 @@ const EditContactForm = ({ contactId, handleCloseModal }) => {
 
   const handleSubmit = (data, actions) => {
     const contactData = { ...data, id: contactId };
+
+    if (
+      visibleContacts
+        .filter((el) => el.id !== contactId)
+        .some(
+          (el) =>
+            el.name.trim().toLowerCase() ===
+            contactData.name.trim().toLowerCase()
+        )
+    ) {
+      toast(`You already have a contact with name ${contactData.name}`, {
+        duration: 3000,
+        style: styleToastMessage,
+      });
+      return;
+    }
+
+    if (
+      visibleContacts
+        .filter((el) => el.id !== contactId)
+        .some((el) => el.number === contactData.number)
+    ) {
+      toast(`You already have a contact with number ${contactData.number}`, {
+        duration: 3000,
+        style: styleToastMessage,
+      });
+      return;
+    }
+
     dispatch(editContact(contactData));
     actions.resetForm();
     handleCloseModal();
