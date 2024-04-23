@@ -88,6 +88,13 @@
   }
 }
 
+@media screen and (min-width: 1439.98px) {
+  .contacts-container,
+  .container {
+    max-width: 1440px;
+  }
+}
+
 .button-64 {
   align-items: center;
   background-image: linear-gradient(
