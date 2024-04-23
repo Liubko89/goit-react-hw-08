@@ -67,7 +67,7 @@ const ContactForm = () => {
             className="input"
             type="text"
             name="number"
-            placeholder="Enter contact number"
+            placeholder="000-000-0000"
             autoComplete="off"
           />
           <ErrorMessage className="errorMsg" name="number" component="span" />

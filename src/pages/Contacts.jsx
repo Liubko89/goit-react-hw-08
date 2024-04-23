@@ -18,7 +18,7 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <div className="container">
+    <div className="contacts-container">
       <DocumentTitle>Phonebook</DocumentTitle>
       <div className="mainContactForm">
         <ContactForm />

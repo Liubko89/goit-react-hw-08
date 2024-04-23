@@ -39,7 +39,7 @@ const Contact = ({ contactName, contactNumber, contactId }) => {
 
   return (
     <>
-      <div>
+      <div className={css.contactInfoWrap}>
         <div className={css.contactInfo}>
           <IoIosContact className={css.contactIcon} />
           <p className={css.contactName}>{contactName}</p>

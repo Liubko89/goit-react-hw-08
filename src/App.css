@@ -29,8 +29,10 @@
   min-height: 70vh;
 }
 
+.contacts-container,
 .container {
-  max-width: 320px;
+  max-width: 767.98px;
+  width: 100%;
   padding: 0 16px;
   margin: 0 auto;
   display: flex;
@@ -38,9 +40,19 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.contacts-container {
+  margin-bottom: 0;
+}
+
+.mainContactForm {
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
+  .contacts-container,
   .container {
     max-width: 768px;
   }
@@ -54,7 +66,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 100%;
     padding: 0 16px;
     align-self: flex-start;
     display: flex;
@@ -69,6 +80,7 @@
 }
 
 @media screen and (min-width: 1158px) {
+  .contacts-container,
   .container {
     max-width: 1158px;
     padding-left: 15px;
@@ -91,11 +103,11 @@
   color: #ffffff;
   display: flex;
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 24px;
   justify-content: center;
-  line-height: 1em;
+  line-height: 1.2em;
   max-width: 100%;
-  min-width: 80px;
+  min-width: 120px;
   padding: 2px;
   text-decoration: none;
   user-select: none;
@@ -103,6 +115,13 @@
   touch-action: manipulation;
   white-space: nowrap;
   cursor: pointer;
+}
+
+@media screen and (max-width: 360px) {
+  .button-64 {
+    min-width: 80px;
+    font-size: 18px;
+  }
 }
 
 .button-64:active,
