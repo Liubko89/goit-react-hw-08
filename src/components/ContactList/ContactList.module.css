@@ -16,11 +16,6 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-@media screen and (min-width: 1440px) {
-  .contactList {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
 
 .contactListItem {
   border-radius: 4px;
