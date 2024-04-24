@@ -15,20 +15,6 @@
   min-height: 100vh;
 }
 
-.homePage {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(43, 43, 48, 0.2)
-    ),
-    url("../src/img/jenny.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-left: 1px solid var(--primary-brand);
-  border-right: 1px solid var(--primary-brand);
-  min-height: 70vh;
-}
-
 .contacts-container,
 .container {
   max-width: 767.98px;
@@ -193,4 +179,20 @@ h1 {
     padding: 8px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, var(--decor) 0px 6px 6px;
   }
+}
+
+.homePage {
+  width: 100%;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(43, 43, 48, 0.2)
+    ),
+    url("../src/img/jenny.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-left: 1px solid var(--primary-brand);
+  border-right: 1px solid var(--primary-brand);
+  min-height: 70vh;
+  padding: 0;
 }

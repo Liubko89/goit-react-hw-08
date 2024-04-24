@@ -3,7 +3,7 @@ import { RegistrationForm } from "../components/RegistrationForm/RegistrationFor
 
 export default function Registration() {
   return (
-    <div>
+    <div className="container">
       <DocumentTitle>Registration</DocumentTitle>
       <RegistrationForm />
     </div>
